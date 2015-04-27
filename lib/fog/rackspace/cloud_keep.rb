@@ -54,6 +54,7 @@ module Fog
       request :get_secret_metadata
       request :get_secret_decrypt
       request :create_secret
+      request :destroy_secret
 
       class Mock < Fog::Rackspace::Service
       end

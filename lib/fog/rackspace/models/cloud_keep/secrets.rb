@@ -13,7 +13,7 @@ module Fog
         end
 
         def get(secret_id)
-          data = service.get_secret(secret_id).body['secret']
+          data = service.get_secret_metadata(secret_id).body['secret']
           new(data)
         rescue Fog::Rackspace::CloudKeep::NotFound
           nil
