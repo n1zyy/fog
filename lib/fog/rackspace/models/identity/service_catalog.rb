@@ -31,11 +31,14 @@ module Fog
         end
 
         def get_endpoint(service_name, region=nil, service_net=false)
+          puts "*** entering region = #{region}"
           service_region = region_key(region)
+          puts "*** resolved region name = #{service_region}"
 
           network_type = network_type_key(service_net)
 
           endpoints = get_endpoints(service_name, service_net)
+          puts "*** endpoints: #{endpoints.inspect}"
           raise "Unable to locate endpoint for service #{service_name}" if endpoints.empty?
 
           if endpoints.size > 1 && region.nil?
