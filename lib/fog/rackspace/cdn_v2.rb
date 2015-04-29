@@ -112,7 +112,7 @@ module Fog
         end
 
         def region
-          @rackspace_region
+          @rackspace_region || :dfw
         end
 
         def endpoint_uri(service_endpoint_url=nil)
